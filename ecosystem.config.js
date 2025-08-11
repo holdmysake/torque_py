@@ -1,7 +1,7 @@
 module.exports = {
     apps: [
         {
-            name: "fastapi-app",
+            name: "torque-py",
             script: "uvicorn",
             args: "main:app --host 0.0.0.0 --port 1111",
             interpreter: "python3",
