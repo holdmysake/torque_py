@@ -59,6 +59,6 @@ def check_point(coord: str = Query(..., description="Format: lat,lon")):
 
     return {
         "in_area": False,
-        "nearest_route": clean_name(nearest_route) if nearest_route else None,
+        "route": clean_name(nearest_route) if nearest_route else None,
         "distance_m": round(min_distance_m, 2)
     }
