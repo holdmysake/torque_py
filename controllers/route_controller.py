@@ -45,7 +45,7 @@ def check_point(coord: str = Query(..., description="Format: lat,lon")):
 
     for route_name, poly in polygons.items():
         if poly.contains(point):
-            return {"in_area": True, "route": clean_name(route_name)}
+            return {"in_area": True, "route_id": clean_name(route_name)}
 
     min_distance_m = float("inf")
     nearest_route = None
@@ -59,6 +59,6 @@ def check_point(coord: str = Query(..., description="Format: lat,lon")):
 
     return {
         "in_area": False,
-        "route": clean_name(nearest_route) if nearest_route else None,
+        "route_id": clean_name(nearest_route) if nearest_route else None,
         "distance_m": round(min_distance_m, 2)
     }
